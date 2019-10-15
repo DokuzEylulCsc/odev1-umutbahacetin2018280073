@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>2019 Güz Döneminin ilk ödevi</h2>
+<head>
+<title>Umut Baha Ã‡etin 2018280073</title>
+</head>
+<h1>UMUT BAHA Ã‡ETÄ°N 2018280073</h1>
+<h2>2019 GÃ¼z DÃ¶neminin ilk Ã¶devi</h2>
 <label for="id1">Metin kutusu 1</label>
-<input type='text' id='id1' /> 
+<input type='text' id='id1' onkeypress="return antiharf(event)" />
 <br>
 <label for="id2">Metin kutusu 2</label>
-<input type='text' id='id2' /> 
+<input type='text' id='id2' onkeypress="return antiharf(event)" />
 <br><br>
-<button type="button">Topla</button>
+<button type="button" onclick="toplama();">Topla</button>
 <br><br>
 <label for="id3">Metin kutusu 3</label>
-<input type='text' id='id3' /> 
+<input type='text' id='id3' />
 <br>
 <label for="id4">Metin kutusu 4</label>
-<input type='text' id='id4' /> 
+<input type='text' id='id4' />
 <br><br>
-<button type="button">Yapýþtýr</button>
+<button type="button" onclick="yazma();">YapÄ±ÅŸtÄ±r</button>
 </body>
+<script>
+		function toplama() {
+		var deger1 = parseInt(document.getElementById("id1").value);
+		var deger2 = parseInt(document.getElementById("id2").value);
+		var x = deger1 + deger2;
+        alert(x);
+				}
+		function yazma() {
+		var y = document.getElementById("id3").value;
+		var z = document.getElementById("id4").value;
+		var t = y + z;
+		alert(t);
+}
+function antiharf(event) {
+if(event.keyCode != 8 && event.keyCode != 0 && (event.keyCode < 48 || event.keyCode > 57))
+return false;
+var frm = document.getElementById("sayisal_form");
+frm.setAttribute("onsubmit" , true);
+return true;
+}
+</script>
 </html>
